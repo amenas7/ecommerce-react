@@ -1,0 +1,31 @@
+  .card-body {
+    padding: 0px !important;
+    padding-left: 5px !important;
+  }
+  
+  .card-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .label {
+    color: #222;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .label-price {
+    margin-bottom: 0px;
+  }
+
+  
+  .principal .card {
+    transition: border-color 0.3s ease;
+    border: 1px solid #ddd;
+  }
+  
+  .principal .card:hover {
+    border-color: #694BEC;
+  }

@@ -1,0 +1,10 @@
+.bg-light{
+    background-color: #fff !important;
+}
+
+.btn-outline-dark{
+    --bs-btn-border-color: #5638E0;
+    --bs-btn-color: #5638E0;
+    --bs-btn-hover-bg: #5638E0;
+    --bs-btn-hover-border-color: #5638E0;
+}

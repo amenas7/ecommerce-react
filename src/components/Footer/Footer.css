@@ -1,0 +1,10 @@
+.footer {
+    font-size: 1rem;
+    color: #222;
+    background-color: #e7e4f1 !important;
+    font-weight: 500;
+  }
+  
+  .footer .text-muted {
+    color: #222;
+  }
