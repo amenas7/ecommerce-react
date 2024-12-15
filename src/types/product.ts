@@ -17,5 +17,5 @@ export interface IProduct {
 
 export interface RespProduct {
   ok: boolean;
-  data: IProduct
+  data: IProduct | IProduct[]; // Unión de tipos
 }

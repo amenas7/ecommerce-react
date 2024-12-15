@@ -2,9 +2,14 @@ import { useRouteError, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export interface RouteError {
+  statusText?: string;
+  message?: string;
+}
+
 export default function ErrorPage() {
   const navigate = useNavigate();
-  const error = useRouteError();
+  const error = useRouteError() as RouteError;
 
   const backHome = () => {
     navigate(`/`);
@@ -28,7 +33,7 @@ export default function ErrorPage() {
               <div>
                 <p className="display-4">Ocurrio un error</p>
                 <p>
-                  <i>{error.statusText || error.message}</i>
+                  <i>{error?.statusText || error?.message || "Error desconocido"}</i>
                 </p>
                 <button className="btn btn-primary" onClick={backHome}>
                   Volver al inicio

@@ -62,11 +62,14 @@ export default function ProductDetailPage() {
 
   if (error) return <p>Error: {error}</p>;
 
+  // Verifica si `data.data` es un array o un único producto
+  const product = !Array.isArray(data?.data) ? data?.data : null;
+
 
   function onAddProduct() {
-    //context.setCount(context.count + quantity);
-    //setQuantity()
-    onAdd(data?.data, quantity);
+    if (product) {
+      onAdd(product, quantity); // Agregar producto único al carrito
+    }
   };
 
   //console.log(context)
@@ -80,16 +83,22 @@ export default function ProductDetailPage() {
           <main className="container my-5">
           <div className="row" style={{ alignItems: 'center' }} >
             
-            <div className="col-md-6" style={{ textAlign: 'center' }}>
-              <img src={data?.data.images[0]} alt="Producto"className="img-fluid rounded"/>
-            </div>
+            <div className="col-md-6" style={{ textAlign: "center" }}>
+                    {product?.images && (
+                      <img
+                        src={product.images[0]}
+                        alt="Producto"
+                        className="img-fluid rounded"
+                      />
+                    )}
+              </div>
 
               <div className="col-md-6">
-              <h2 className="fw-bold">{data?.data.title}</h2>
-              <p className="text-muted">Código Sku: #{data?.data.sku}</p>
-              <h3 className="text-success fw-bold">S/ {data?.data.price}</h3>
+              <h2 className="fw-bold">{product?.title}</h2>
+              <p className="text-muted">Código Sku: #{product?.sku}</p>
+              <h3 className="text-success fw-bold">S/ {product?.price}</h3>
 
-              <p className="mt-4">{data?.data.name}</p>
+              <p className="mt-4">{product?.name}</p>
 
               <div className="d-flex align-items-center mt-4">
                 <label className="me-3">Cantidad:</label>

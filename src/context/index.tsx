@@ -56,14 +56,6 @@ export const ShoppingCartProvider = ({
 
   }
 
-  function removeItem(itemId) {
-
-  }
-
-  function clear() {
-    
-  }
-
   function isInCart(product: IProduct): boolean {
     return cartProducts.some((cartproducts) => cartproducts.id === product.id);
   }

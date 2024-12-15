@@ -114,11 +114,16 @@ function App() {
 
               <div className="col-9">
                 <div className="row g-3">
-                  {data?.data.map((product) => (
-                    <ProductCard {...product} key={product.id} />
-                  ))}
+                  {Array.isArray(data?.data) ? (
+                    data.data.map((product) => (
+                      <ProductCard {...product} key={product.id} />
+                    ))
+                  ) : (
+                    <p>No hay productos disponibles o el producto no es un array.</p>
+                  )}
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
